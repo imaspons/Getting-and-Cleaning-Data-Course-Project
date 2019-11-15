@@ -28,9 +28,7 @@ Merges the training and the test sets to create one data set.
 - Test_data (2947 rows, 563 columns) is created by merging subject_test, y_test, x_test using cbind() function.
 - Train_data (7352 rows, 563 column) is created by merging subject_train, y_train, x_train using cbind() function. 
 - MergedData (10299 rows, 563 column) is created by merging test_data, train_data using rbind() function
-
-Extracts only the measurements on the mean and standard deviation for each measurement
-MergedData2 (10299 rows, 88 columns) is created by subsetting MergedData, selecting only columns: ID, activity and the measurements on the mean and standard deviation (std) for each measurement
+- MergedData2 (10299 rows, 88 columns) is created by subsetting MergedData, selecting only columns: ID, activity and the measurements on the mean and standard deviation (std) for each measurement.
 
 
 Appropriately labels the data set with descriptive variable names: 
