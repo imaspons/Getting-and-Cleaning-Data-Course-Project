@@ -19,20 +19,18 @@ contains recorded features train data
 y_train <- test/y_train.txt : 7352 rows, 1 columns
 contains train data of activities’code labels
 
+x_test and x_train names are change according to feature.txt file
+
 Merges the training and the test sets to create one data set
-Test_data (10299 rows, 563 columns) is created by merging subject_test, y_test, x_test using rbind() function
-Train_data (10299 rows, 563 column) is created by merging subject_train, y_train, x_train using rbind() function
-Subject (10299 rows, 1 column) is created by merging subject_train and subject_test using rbind() function
-Merged_Data (10299 rows, 563 column) is created by merging test_data, train_data cbind() function
+Test_data (2947 rows, 563 columns) is created by merging subject_test, y_test, x_test using cbind() function
+Train_data (7352 rows, 563 column) is created by merging subject_train, y_train, x_train using cbind() function
+MergedData (10299 rows, 563 column) is created by merging test_data, train_data using rbind() function
 
 Extracts only the measurements on the mean and standard deviation for each measurement
-TidyData (10299 rows, 88 columns) is created by subsetting Merged_Data, selecting only columns: subject, code and the measurements on the mean and standard deviation (std) for each measurement
+MergedData2 (10299 rows, 88 columns) is created by subsetting MergedData, selecting only columns: ID, activity and the measurements on the mean and standard deviation (std) for each measurement
 
-Uses descriptive activity names to name the activities in the data set
-Entire numbers in code column of the TidyData replaced with corresponding activity taken from second column of the activities variable
 
 Appropriately labels the data set with descriptive variable names
-code column in TidyData renamed into activities
 All Acc in column’s name replaced by Accelerometer
 All Gyro in column’s name replaced by Gyroscope
 All BodyBody in column’s name replaced by Body
@@ -41,5 +39,5 @@ All start with character f in column’s name replaced by Frequency
 All start with character t in column’s name replaced by Time
 
 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
-FinalData (180 rows, 88 columns) is created by sumarizing TidyData taking the means of each variable for each activity and each subject, after groupped by subject and activity.
-Export FinalData into FinalData.txt file.
+Sumarizing (180 rows, 88 columns) is created by sumarizing MergedData2 taking the means of each variable for each activity and each subject, after groupped by subject and activity.
+Export Sumarizing into Sumarizing.txt file.
