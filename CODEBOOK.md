@@ -4,32 +4,30 @@ The run_analysis.R script performs the data preparation and then followed by the
 
 
 Assign each data to variables
-features <- features.txt : 561 rows, 2 columns
+- features <- features.txt : 561 rows, 2 columns
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
-activities <- activity_labels.txt : 6 rows, 2 columns
+- activities <- activity_labels.txt : 6 rows, 2 columns
 List of activities performed when the corresponding measurements were taken and its codes (labels)
-subject_test <- test/subject_test.txt : 2947 rows, 1 column
+- subject_test <- test/subject_test.txt : 2947 rows, 1 column
 contains test data of 30% of volunteer test subjects being observed
-x_test <- test/X_test.txt : 2947 rows, 561 columns
+- x_test <- test/X_test.txt : 2947 rows, 561 columns
 contains recorded features test data
-y_test <- test/y_test.txt : 2947 rows, 1 columns
+- y_test <- test/y_test.txt : 2947 rows, 1 columns
 contains test data of activities’code labels
-subject_train <- test/subject_train.txt : 7352 rows, 1 column
+- subject_train <- test/subject_train.txt : 7352 rows, 1 column
 contains train data of 70% volunteer subjects being observed
-x_train <- test/X_train.txt : 7352 rows, 561 columns
+- x_train <- test/X_train.txt : 7352 rows, 561 columns
 contains recorded features train data
-y_train <- test/y_train.txt : 7352 rows, 1 columns
+- y_train <- test/y_train.txt : 7352 rows, 1 columns
 contains train data of activities’code labels
 
 x_test and x_train names are change according to feature.txt file
 
 Merges the training and the test sets to create one data set.
 
-Test_data (2947 rows, 563 columns) is created by merging subject_test, y_test, x_test using cbind() function.
-
-Train_data (7352 rows, 563 column) is created by merging subject_train, y_train, x_train using cbind() function. 
-
-MergedData (10299 rows, 563 column) is created by merging test_data, train_data using rbind() function
+- Test_data (2947 rows, 563 columns) is created by merging subject_test, y_test, x_test using cbind() function.
+- Train_data (7352 rows, 563 column) is created by merging subject_train, y_train, x_train using cbind() function. 
+- MergedData (10299 rows, 563 column) is created by merging test_data, train_data using rbind() function
 
 Extracts only the measurements on the mean and standard deviation for each measurement
 MergedData2 (10299 rows, 88 columns) is created by subsetting MergedData, selecting only columns: ID, activity and the measurements on the mean and standard deviation (std) for each measurement
