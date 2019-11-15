@@ -52,11 +52,6 @@ train_data <- cbind(subject_train, y_train, x_train)
 # Merging training and testing data sets.
 
 mergedData <- rbind(test_data, train_data)
-mergedData <- arrange(mergedData, ID)
-
-unique(mergedData$ID)
-unique(mergedData$Activity)
-str(mergedData)
 
 # Extract only the mean and sd measures for each measurement
 
